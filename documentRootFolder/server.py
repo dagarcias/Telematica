@@ -2,9 +2,8 @@ import http.server
 import logging
 import socketserver
 import threading
-import ssl
 
-PORT = 8000
+PORT = 8080
 
 IP_ADDRESS = "172.31.94.75"
 Handler = http.server.SimpleHTTPRequestHandler
