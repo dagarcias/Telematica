@@ -2,8 +2,16 @@ import http.server
 import logging
 import socketserver
 import threading
+import ssl
 
 PORT = 8000
+
+IP_ADDRESS = "172.31.94.75"
+Handler = http.server.SimpleHTTPRequestHandler
+httpd = socketserver.TCPServer((IP_ADDRESS, PORT), Handler)
+print(f"Serving on http://{IP_ADDRESS}:{PORT}")
+httpd.serve_forever()
+
 
 class MyHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
